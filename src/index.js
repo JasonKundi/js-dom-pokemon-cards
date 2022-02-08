@@ -21,14 +21,15 @@ function addCard(data) {
     data.sprites.other["official-artwork"].front_default
   );
   li.appendChild(img)
+
   const ul2 = document.createElement("ul")
   ul2.classList.add('card--text')
   li.appendChild(ul2)
 
   for (let i = 0; i < data.stats.length; i++) {
       const li = document.createElement("li")
-      const liText = document.createTextNode(data.stats)
-      li.innerText = data.stats[i].name 
+      // const liText = document.createTextNode(data.stats.name)
+      li.innerText = data.stats[i].stat.name.toUpperCase() + ':' + data.stats[i].base_stat
       
       ul2.appendChild(li)
   }
